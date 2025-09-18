@@ -35,7 +35,7 @@ This tool takes a list of failing test incidents (`Failures.jsonl`) and a `Polic
 | `Failures.jsonl` | Incident list (JSON Lines). Only uses:<br>`module`, `environment`, `failure_type`, `impacted_layers` |
 
 ⚡ Usage
-* export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/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"
+* export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
 * node planner.js --policy Policy.yaml --failures Failures.jsonl --out plan.json --dashboard dashboard.html
 
 Generates:
@@ -115,23 +115,24 @@ All integrations (Slack, Jira, Email) are optional and auto-skip if credentials 
 ## 📸 Sample Run Screenshots
 
 ### 🖥️ CLI Run
-
+<p align="center">
+  <img src="./screenshots/cli.png" alt="Deterministic Test Plan Generator" width="100%">
+</p>
 ::contentReference[oaicite:0]{index=0}
 
 
 ### 📊 Slack Message (:contentReference[oaicite:1]{index=1})
-
+<p align="center">
+  <img src="./screenshots/slack.png" alt="Deterministic Test Plan Generator" width="100%">
+</p>
 ::contentReference[oaicite:2]{index=2}
 
 
 ### 📎 Jira Comment (:contentReference[oaicite:3]{index=3})
-
+<p align="center">
+  <img src="./screenshots/jira-comment.png" alt="Deterministic Test Plan Generator" width="100%">
+</p>
 ::contentReference[oaicite:4]{index=4}
-
-
-### 📧 Email Report (:contentReference[oaicite:5]{index=5})
-
-::contentReference[oaicite:6]{index=6}
 
 
 > ⚠️ These screenshots are for presentation/demo. Your actual visuals may vary depending on your Slack theme, Jira configuration, and email client.
