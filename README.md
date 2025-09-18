@@ -114,25 +114,14 @@ All integrations (Slack, Jira, Email) are optional and auto-skip if credentials 
 
 ## 📸 Sample Run Screenshots
 
-### 🖥️ CLI Run
-<p align="center">
-  <img src="./screenshots/cli.png" alt="Deterministic Test Plan Generator" width="100%">
-</p>
-::contentReference[oaicite:0]{index=0}
-
-
 ### 📊 Slack Message (:contentReference[oaicite:1]{index=1})
 <p align="center">
   <img src="./screenshots/slack.png" alt="Deterministic Test Plan Generator" width="100%">
 </p>
-::contentReference[oaicite:2]{index=2}
-
 
 ### 📎 Jira Comment (:contentReference[oaicite:3]{index=3})
 <p align="center">
   <img src="./screenshots/jira-comment.png" alt="Deterministic Test Plan Generator" width="100%">
 </p>
-::contentReference[oaicite:4]{index=4}
-
 
 > ⚠️ These screenshots are for presentation/demo. Your actual visuals may vary depending on your Slack theme, Jira configuration, and email client.
