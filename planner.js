@@ -120,7 +120,23 @@ if (args.out.endsWith(".csv")) {
 if (args.dashboard) {
   const totalMin = results.reduce((a,b)=>a+b.final_minutes,0);
   const totalInc = results.length;
+  let rowsHTML = "";   // <-- Declare this BEFORE the loop
 
+  results.forEach(r => {
+    rowsHTML += `
+  <tr data-module="${r.module}" 
+      data-environment="${r.environment}" 
+      data-failure_type="${r.failure_type}">
+    <td>${r.test_id || ""}</td>
+    <td>${r.module}</td>
+    <td>${r.environment}</td>
+    <td>${r.failure_type}</td>
+    <td>${r.impacted_layers.join(", ")}</td>
+    <td>${r.base_minutes}</td>
+    <td>${r.final_minutes}</td>
+    <td>${r.priority_score.toFixed(3)}</td>
+  </tr>`;
+  });
   const rows = results.map(r => `
     <tr>
       <td>${r.test_id||""}</td><td>${r.module}</td><td>${r.environment}</td><td>${r.failure_type}</td>
@@ -130,36 +146,102 @@ if (args.dashboard) {
       <td style="text-align:right">${r.priority_score}</td>
     </tr>`).join("");
 
-  const html = `<!doctype html>
-<html><head><meta charset="utf-8">
-<title>Deterministic Plan</title>
-<style>
-body{font-family:system-ui;margin:20px;}
-table{width:100%;border-collapse:collapse}
-th,td{padding:8px;border-bottom:1px solid #eee}
-th{cursor:pointer;background:#fafafa}
-</style></head><body>
-<h1>Test Plan</h1>
-<p>Total incidents: <b>${totalInc}</b> — Total allocated minutes: <b>${totalMin}</b></p>
-<table id="plan"><thead><tr>
-<th>test_id</th><th>module</th><th>environment</th><th>failure_type</th>
-<th>impacted_layers</th><th>base_minutes</th><th>final_minutes</th><th>priority_score</th>
-</tr></thead><tbody>${rows}</tbody></table>
-<script>
-const t=document.getElementById('plan');
-t.querySelectorAll('th').forEach((th,i)=>{
- th.onclick=()=>{
-  const rows=[...t.tBodies[0].rows];
-  const asc=!th.classList.toggle('asc');
-  rows.sort((a,b)=>{
-   const A=a.cells[i].innerText,B=b.cells[i].innerText;
-   return !isNaN(A-B)?(asc?A-B:B-A):asc?A.localeCompare(B):B.localeCompare(A);
-  });
-  rows.forEach(r=>t.tBodies[0].append(r));
- };
-});
-</script>
-</body></html>`;
+  const html = `
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Deterministic Test Plan</title>
+    <style>
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+      th { background-color: #f4f4f4; cursor: pointer; }
+      tr:nth-child(even) { background-color: #fafafa; }
+    </style>
+  </head>
+  <body>
+  <h2>📊 Deterministic Test Plan</h2>
+
+  <!-- Filter controls -->
+  <div style="margin-bottom: 15px; display: flex; gap: 15px; align-items: center;">
+    <label>Module:
+      <select id="moduleFilter"><option value="">All</option></select>
+    </label>
+    <label>Environment:
+      <select id="envFilter"><option value="">All</option></select>
+    </label>
+    <label>Failure Type:
+      <select id="failureFilter"><option value="">All</option></select>
+    </label>
+  </div>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Test ID</th>
+      <th>Module</th>
+      <th>Environment</th>
+      <th>Failure Type</th>
+      <th>Impacted Layers</th>
+      <th>Base Minutes</th>
+      <th>Final Minutes</th>
+      <th>Priority Score</th>
+    </tr>
+  </thead>
+  <tbody>
+  ${rowsHTML}
+  </tbody>
+  </table>
+
+  <script>
+    const table = document.querySelector("table");
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+    const moduleSet = new Set();
+    const envSet = new Set();
+    const failSet = new Set();
+
+    rows.forEach(r => {
+      moduleSet.add(r.dataset.module);
+      envSet.add(r.dataset.environment);
+      failSet.add(r.dataset.failure_type);
+    });
+
+    const fillOptions = (sel, values) => {
+      values.forEach(v => {
+        const o = document.createElement("option");
+        o.value = v;
+        o.textContent = v;
+        sel.appendChild(o);
+      });
+    };
+
+    fillOptions(document.getElementById("moduleFilter"), moduleSet);
+    fillOptions(document.getElementById("envFilter"), envSet);
+    fillOptions(document.getElementById("failureFilter"), failSet);
+
+    const applyFilters = () => {
+      const m = document.getElementById("moduleFilter").value;
+      const e = document.getElementById("envFilter").value;
+      const f = document.getElementById("failureFilter").value;
+
+      rows.forEach(row => {
+        const match =
+          (!m || row.dataset.module === m) &&
+          (!e || row.dataset.environment === e) &&
+          (!f || row.dataset.failure_type === f);
+        row.style.display = match ? "" : "none";
+      });
+    };
+
+    document.getElementById("moduleFilter").addEventListener("change", applyFilters);
+    document.getElementById("envFilter").addEventListener("change", applyFilters);
+    document.getElementById("failureFilter").addEventListener("change", applyFilters);
+  </script>
+
+  </body>
+  </html>`;
+
   fs.writeFileSync(args.dashboard, html);
 }
 

@@ -114,12 +114,12 @@ All integrations (Slack, Jira, Email) are optional and auto-skip if credentials 
 
 ## 📸 Sample Run Screenshots
 
-### 📊 Slack Message (:contentReference[oaicite:1]{index=1})
+### 📊 Slack Message
 <p align="center">
   <img src="./screenshots/slack.png" alt="Deterministic Test Plan Generator" width="100%">
 </p>
 
-### 📎 Jira Comment (:contentReference[oaicite:3]{index=3})
+### 📎 Jira Comment
 <p align="center">
   <img src="./screenshots/jira-comment.png" alt="Deterministic Test Plan Generator" width="100%">
 </p>
