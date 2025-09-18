@@ -3,7 +3,7 @@
   <img src="./banner.png" alt="Deterministic Test Plan Generator" width="100%">
 </p>
 
-# 🏆 Deterministic Test Plan Generator
+## 🏆 Deterministic Test Plan Generator
 * **TestAutothon 2025 — Non-AI Challenge**  
 * Theme: *AI-Powered Testing — Orchestrating Automation, Agents & Generative AI for the Future*  
 * This solution does **not** use GenAI — it is fully deterministic.
