@@ -1,0 +1,793 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Deterministic Plan</title>
+<style>
+body{font-family:system-ui;margin:20px;}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;border-bottom:1px solid #eee}
+th{cursor:pointer;background:#fafafa}
+</style></head><body>
+<h1>Test Plan</h1>
+<p>Total incidents: <b>109</b> — Total allocated minutes: <b>5005</b></p>
+<table id="plan"><thead><tr>
+<th>test_id</th><th>module</th><th>environment</th><th>failure_type</th>
+<th>impacted_layers</th><th>base_minutes</th><th>final_minutes</th><th>priority_score</th>
+</tr></thead><tbody>
+    <tr>
+      <td>4edee06f-42bf-4fc5-a4f0-af4d7f51b388</td><td>Payment Gateway</td><td>PreProd</td><td>Data Freshness Breach</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">8.4</td>
+    </tr>
+    <tr>
+      <td>bec39de6-6f18-4e43-9ee6-c34e91903e06</td><td>Order Management</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>Client App, OrderService, CartService, DB (Postgres)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">7.8</td>
+    </tr>
+    <tr>
+      <td>05f6d0da-04b1-43c3-b254-1382fbc3a218</td><td>Payment Gateway</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>PaymentService, Webhook Handler, Queue (SQS), DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">7.8</td>
+    </tr>
+    <tr>
+      <td>a4613e5a-01ea-49e9-ba07-b1cd7e7a64dc</td><td>Payment Gateway</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">47</td>
+      <td style="text-align:right">7.8</td>
+    </tr>
+    <tr>
+      <td>4a751f37-7eef-4a36-9865-3b70fed1676c</td><td>Order Management</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">7.2</td>
+    </tr>
+    <tr>
+      <td>42fcea7f-c0cc-4496-8333-70e46775357b</td><td>Payment Gateway</td><td>PreProd</td><td>Integration Timeout</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">7.2</td>
+    </tr>
+    <tr>
+      <td>cb489685-3ce9-4a0c-ad4d-f7f3479fbb5b</td><td>Payment Gateway</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">7.2</td>
+    </tr>
+    <tr>
+      <td>6061b16e-36fa-4ff6-bb3e-dd9356a89bc9</td><td>Payment Gateway</td><td>PreProd</td><td>Backend Service Bug</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">6.6</td>
+    </tr>
+    <tr>
+      <td>7927cb45-cfaa-4295-aced-9619c356d048</td><td>Product Catalog</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">6.24</td>
+    </tr>
+    <tr>
+      <td>1dfff9fb-3cf8-45d3-a168-08662619b5d6</td><td>Shipping & Logistics</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">6.24</td>
+    </tr>
+    <tr>
+      <td>412d27c6-4e9d-4d49-a197-8898b8f076b1</td><td>Payment Gateway</td><td>Staging</td><td>Concurrency Bug</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">6.175</td>
+    </tr>
+    <tr>
+      <td>ea254172-783d-4ac6-ade4-06442c194878</td><td>Payment Gateway</td><td>PreProd</td><td>Unknown</td>
+      <td>PaymentService, Webhook Handler, Queue (SQS), DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">48</td>
+      <td style="text-align:right">6</td>
+    </tr>
+    <tr>
+      <td>4eac02d4-e4de-473e-9c0c-cd9f0f3520e1</td><td>Payment Gateway</td><td>QA</td><td>Concurrency Bug</td>
+      <td>PaymentService, Webhook Handler, Queue (SQS), DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">47</td>
+      <td style="text-align:right">5.85</td>
+    </tr>
+    <tr>
+      <td>a7d2bccf-9a22-4e10-b0e8-81286be75598</td><td>Product Catalog</td><td>PreProd</td><td>Integration Timeout</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">55</td>
+      <td style="text-align:right">5.76</td>
+    </tr>
+    <tr>
+      <td>b8216bb6-cd12-4f1e-a1bf-86494f5adce8</td><td>Product Catalog</td><td>PreProd</td><td>Data Integrity Issue</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">55</td>
+      <td style="text-align:right">5.76</td>
+    </tr>
+    <tr>
+      <td>32471f99-d534-4fb5-8edf-53cda3297bb1</td><td>Shipping & Logistics</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">5.76</td>
+    </tr>
+    <tr>
+      <td>588dc79f-ee70-40d8-9b72-42e1893e90c0</td><td>Shipping & Logistics</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">5.76</td>
+    </tr>
+    <tr>
+      <td>3e042522-2719-4d60-98e8-8190f2dde8a0</td><td>Order Management</td><td>Staging</td><td>Authentication Failure</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">48</td>
+      <td style="text-align:right">5.7</td>
+    </tr>
+    <tr>
+      <td>302a0a6e-84e6-481b-8f95-45dfd86bfc63</td><td>Shipping & Logistics</td><td>UAT</td><td>Data Freshness Breach</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">5.6</td>
+    </tr>
+    <tr>
+      <td>0b249e4e-2024-4587-b331-a3ddaf82dfe1</td><td>Order Management</td><td>UAT</td><td>Backend Service Bug</td>
+      <td>Client App, OrderService, CartService, DB (Postgres)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">5.5</td>
+    </tr>
+    <tr>
+      <td>af9e2a13-e9f2-4901-a6a7-e4b38fa0f829</td><td>Order Management</td><td>UAT</td><td>External Dependency Failure</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">47</td>
+      <td style="text-align:right">5.5</td>
+    </tr>
+    <tr>
+      <td>d115788c-9dba-4b53-8dc1-499c9c875bcc</td><td>Order Management</td><td>UAT</td><td>External Dependency Failure</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">47</td>
+      <td style="text-align:right">5.5</td>
+    </tr>
+    <tr>
+      <td>8f1c84fd-a889-4dab-8b1b-22c369a52b0f</td><td>Payment Gateway</td><td>UAT</td><td>Configuration Error</td>
+      <td>PaymentService, Webhook Handler, Queue (SQS), DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">5.5</td>
+    </tr>
+    <tr>
+      <td>28907004-c2f7-40ce-ba4b-ac24b4d52340</td><td>Order Management</td><td>QA</td><td>Data Integrity Issue</td>
+      <td>Client App, OrderService, CartService, DB (Postgres)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">5.4</td>
+    </tr>
+    <tr>
+      <td>3f14e542-ad08-41ef-8abc-50c7cc5f6680</td><td>Order Management</td><td>QA</td><td>Integration Timeout</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">46</td>
+      <td style="text-align:right">5.4</td>
+    </tr>
+    <tr>
+      <td>17f9dae6-308c-4403-8417-e35441b110cf</td><td>User Accounts & Auth</td><td>Staging</td><td>Data Freshness Breach</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">5.32</td>
+    </tr>
+    <tr>
+      <td>0b4e410a-e9a4-4f8e-9a2a-3683c7cd7c5a</td><td>Product Catalog</td><td>PreProd</td><td>Configuration Error</td>
+      <td>Client App, API Gateway, Catalog Service, Search Index (Elasticsearch)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">56</td>
+      <td style="text-align:right">5.28</td>
+    </tr>
+    <tr>
+      <td>dcfb2b2d-6a98-4d3e-9b11-f0efe3d56d15</td><td>User Accounts & Auth</td><td>PreProd</td><td>Configuration Error</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">5.28</td>
+    </tr>
+    <tr>
+      <td>33aaba78-240d-401c-ba65-92a82dbab21f</td><td>Order Management</td><td>Staging</td><td>Backend Service Bug</td>
+      <td>Client App, OrderService, CartService, DB (Postgres)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">5.225</td>
+    </tr>
+    <tr>
+      <td>5c06896e-2967-4667-92b4-a08b2e84bc2f</td><td>Customer Support & Returns</td><td>PreProd</td><td>Data Freshness Breach</td>
+      <td>RMAService, Attachment S3, Email Service, DB (Tickets)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">5.04</td>
+    </tr>
+    <tr>
+      <td>34dfcd2a-c6e8-4993-8389-2ba6909d4d69</td><td>Order Management</td><td>QA</td><td>Backend Service Bug</td>
+      <td>Client App, OrderService, CartService, DB (Postgres)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">4.95</td>
+    </tr>
+    <tr>
+      <td>ffbf2273-a08d-4ef6-a2e1-b00a6cb3aace</td><td>Payment Gateway</td><td>QA</td><td>Configuration Error</td>
+      <td>Client App, API Gateway, PaymentService, External Provider</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">4.95</td>
+    </tr>
+    <tr>
+      <td>a999e296-45aa-4149-b742-609719f68bc7</td><td>Product Catalog</td><td>Staging</td><td>Concurrency Bug</td>
+      <td>Client App, API Gateway, Catalog Service, Search Index (Elasticsearch)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">4.94</td>
+    </tr>
+    <tr>
+      <td>7be054d7-8c2f-425f-aa67-e161c73ac49c</td><td>Product Catalog</td><td>UAT</td><td>Authentication Failure</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">46</td>
+      <td style="text-align:right">4.8</td>
+    </tr>
+    <tr>
+      <td>dc5904db-e8e0-4a55-8f37-802212962a53</td><td>Shipping & Logistics</td><td>UAT</td><td>Integration Timeout</td>
+      <td>ShippingService, Carrier API, Label Service, DB (MySQL)</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">53</td>
+      <td style="text-align:right">4.8</td>
+    </tr>
+    <tr>
+      <td>df9ddcac-6384-41fa-be73-f0eddd5f0347</td><td>User Accounts & Auth</td><td>UAT</td><td>Authentication Failure</td>
+      <td>Client App, AuthService, OAuth Provider, Cache (Redis)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">46</td>
+      <td style="text-align:right">4.8</td>
+    </tr>
+    <tr>
+      <td>661cc990-13ab-4e6b-9745-879fb8c305bc</td><td>Order Management</td><td>Staging</td><td>Unknown</td>
+      <td>API Gateway, Orchestrator, PaymentService, InventoryService, Queue (Kafka)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">4.75</td>
+    </tr>
+    <tr>
+      <td>ad0cd724-b170-4058-953c-94f05b1de559</td><td>Promotions & Discounts</td><td>PreProd</td><td>Concurrency Bug</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">4.68</td>
+    </tr>
+    <tr>
+      <td>121e7350-90d8-4b01-8962-23f003726c66</td><td>Shipping & Logistics</td><td>QA</td><td>Concurrency Bug</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">4.68</td>
+    </tr>
+    <tr>
+      <td>9e34897d-4865-43d1-bb70-ba858005394c</td><td>User Accounts & Auth</td><td>QA</td><td>Concurrency Bug</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">45</td>
+      <td style="text-align:right">4.68</td>
+    </tr>
+    <tr>
+      <td>06142f66-a01e-4d13-9f18-f7aed7fbd85b</td><td>Product Catalog</td><td>Staging</td><td>Data Integrity Issue</td>
+      <td>Client App, API Gateway, Catalog Service, Search Index (Elasticsearch)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">48</td>
+      <td style="text-align:right">4.56</td>
+    </tr>
+    <tr>
+      <td>34724434-fbb9-4a3b-a447-136d2a0b86d2</td><td>Shipping & Logistics</td><td>Staging</td><td>Data Integrity Issue</td>
+      <td>ShippingService, Carrier API, Label Service, DB (MySQL)</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">4.56</td>
+    </tr>
+    <tr>
+      <td>99c36c18-c1cf-4f0d-885a-aee9e5ed27e8</td><td>Shipping & Logistics</td><td>Staging</td><td>Data Integrity Issue</td>
+      <td>ShippingService, Carrier API, Label Service, DB (MySQL)</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">4.56</td>
+    </tr>
+    <tr>
+      <td>e3e1cf9d-539f-4c57-bb4d-977ce5027952</td><td>User Accounts & Auth</td><td>Staging</td><td>Integration Timeout</td>
+      <td>Client App, AuthService, OAuth Provider, Cache (Redis)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">4.56</td>
+    </tr>
+    <tr>
+      <td>f547e2d6-9815-4a21-903f-b46a5be8138c</td><td>Shipping & Logistics</td><td>UAT</td><td>Configuration Error</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">49</td>
+      <td style="text-align:right">4.4</td>
+    </tr>
+    <tr>
+      <td>1b99a377-0bed-49e0-a44b-ba4a229d6eb8</td><td>User Accounts & Auth</td><td>UAT</td><td>External Dependency Failure</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">4.4</td>
+    </tr>
+    <tr>
+      <td>e8e4a8f3-e439-4109-836b-791c147bb684</td><td>Analytics & Reporting</td><td>PreProd</td><td>Data Integrity Issue</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>dc988e32-49d1-4165-8fdd-a62fe3ed7b37</td><td>Inventory & Stock Control</td><td>PreProd</td><td>Integration Timeout</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>fc2f1d32-9e3d-4fdb-8288-ecc3790b8d9e</td><td>Inventory & Stock Control</td><td>PreProd</td><td>Integration Timeout</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>24af157e-b731-4329-b649-4866cf04a676</td><td>Notifications & Messaging</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>45da8d2c-c0be-4067-a884-e22603f9b2d3</td><td>Notifications & Messaging</td><td>PreProd</td><td>Integration Timeout</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>31344ec7-a7bc-417a-b621-75d7c6116f6d</td><td>Promotions & Discounts</td><td>PreProd</td><td>Authentication Failure</td>
+      <td>PromoService, Cache (Redis), DB (Rules), Client App</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>4d6e8f20-a1b8-4cb1-b690-54dbc2ef7c8b</td><td>Shipping & Logistics</td><td>QA</td><td>Data Integrity Issue</td>
+      <td>ShippingService, Carrier API, Label Service, DB (MySQL)</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">48</td>
+      <td style="text-align:right">4.32</td>
+    </tr>
+    <tr>
+      <td>3e333ef3-49ac-4c3f-96de-08df86fd6619</td><td>Customer Support & Returns</td><td>UAT</td><td>Data Freshness Breach</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">4.2</td>
+    </tr>
+    <tr>
+      <td>c9c99f1b-25e7-49e3-b9d8-748494329dbd</td><td>Promotions & Discounts</td><td>UAT</td><td>Data Freshness Breach</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">56</td>
+      <td style="text-align:right">4.2</td>
+    </tr>
+    <tr>
+      <td>4d361381-f235-40ef-a296-63c736cf41e9</td><td>Product Catalog</td><td>Staging</td><td>Backend Service Bug</td>
+      <td>Client App, API Gateway, Catalog Service, Search Index (Elasticsearch)</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">4.18</td>
+    </tr>
+    <tr>
+      <td>7b42551f-4dc9-4db9-bc9e-0c991182a736</td><td>User Accounts & Auth</td><td>Staging</td><td>Backend Service Bug</td>
+      <td>Client App, AuthService, OAuth Provider, Cache (Redis)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">4.18</td>
+    </tr>
+    <tr>
+      <td>008ddfdd-61f1-4dd6-8c5a-ef69dcb385ec</td><td>User Accounts & Auth</td><td>UAT</td><td>Unknown</td>
+      <td>Client App, AuthService, OAuth Provider, Cache (Redis)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">4</td>
+    </tr>
+    <tr>
+      <td>29157a47-b853-46f6-9e44-3a715554dfbe</td><td>Analytics & Reporting</td><td>PreProd</td><td>Configuration Error</td>
+      <td>ReportService, Cache (Redis), Warehouse (Snowflake)</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>47e593fe-a5e8-471d-b680-8b7bada50329</td><td>Analytics & Reporting</td><td>PreProd</td><td>Configuration Error</td>
+      <td>ReportService, Cache (Redis), Warehouse (Snowflake)</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>006a8678-9a5b-4bc9-912b-8655878e0459</td><td>Inventory & Stock Control</td><td>PreProd</td><td>Configuration Error</td>
+      <td>OrderService, InventoryService, Reservation Subsystem</td>
+      <td style="text-align:right">34</td>
+      <td style="text-align:right">45</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>ae1e966d-977a-463f-960b-0eafaa0c985f</td><td>Product Catalog</td><td>QA</td><td>External Dependency Failure</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>e50f53da-4871-44a3-aeb3-d6063cd91245</td><td>Product Catalog</td><td>QA</td><td>Configuration Error</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>10d10644-2ed3-4d68-8bec-38cd31f00c69</td><td>User Accounts & Auth</td><td>QA</td><td>External Dependency Failure</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>17dcf2b9-e69a-403f-8118-2bab8d860c05</td><td>User Accounts & Auth</td><td>QA</td><td>Backend Service Bug</td>
+      <td>Client App, AuthService, OAuth Provider, Cache (Redis)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>faa64072-7a01-444f-a8ee-d50733c94d8d</td><td>User Accounts & Auth</td><td>QA</td><td>External Dependency Failure</td>
+      <td>API Gateway, AuthService, RateLimiter, DB (UserStore)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.96</td>
+    </tr>
+    <tr>
+      <td>285304a3-fdd6-40ae-b104-88e25ac42e29</td><td>Promotions & Discounts</td><td>UAT</td><td>Concurrency Bug</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">52</td>
+      <td style="text-align:right">3.9</td>
+    </tr>
+    <tr>
+      <td>925f4d99-84fa-4a19-8a25-5218a52cdc9d</td><td>Product Catalog</td><td>Staging</td><td>Unknown</td>
+      <td>API Gateway, Catalog Service, Cache (Redis), DB (Postgres)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">37</td>
+      <td style="text-align:right">3.8</td>
+    </tr>
+    <tr>
+      <td>4f2d850c-9667-410f-a9a1-46fc2fd84ce2</td><td>Shipping & Logistics</td><td>Staging</td><td>Unknown</td>
+      <td>Client App, OrderService, ShippingService, Geo Service</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">3.8</td>
+    </tr>
+    <tr>
+      <td>9555e37e-9087-47f6-9fd4-19303ea83513</td><td>Analytics & Reporting</td><td>QA</td><td>Data Freshness Breach</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">60</td>
+      <td style="text-align:right">3.78</td>
+    </tr>
+    <tr>
+      <td>bee328a1-7c38-4d1c-a3c7-1841c5a1796b</td><td>Customer Support & Returns</td><td>QA</td><td>Data Freshness Breach</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">46</td>
+      <td style="text-align:right">3.78</td>
+    </tr>
+    <tr>
+      <td>a7693bde-19f6-406a-99a6-a97674c6f028</td><td>Promotions & Discounts</td><td>QA</td><td>Data Freshness Breach</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">3.78</td>
+    </tr>
+    <tr>
+      <td>7979c8d3-b0d6-4218-9b4b-95034d2952bf</td><td>Notifications & Messaging</td><td>Staging</td><td>Concurrency Bug</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.705</td>
+    </tr>
+    <tr>
+      <td>7247ac08-15f4-4cce-bbb6-5dc5240da168</td><td>Customer Support & Returns</td><td>UAT</td><td>Data Integrity Issue</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.6</td>
+    </tr>
+    <tr>
+      <td>aee9d23a-f977-4e2f-b3fe-8fe0b860e500</td><td>Inventory & Stock Control</td><td>UAT</td><td>Data Integrity Issue</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.6</td>
+    </tr>
+    <tr>
+      <td>3fbf6d00-f2db-4886-8605-ce9096b89384</td><td>Notifications & Messaging</td><td>UAT</td><td>Authentication Failure</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">3.6</td>
+    </tr>
+    <tr>
+      <td>dfbadfc3-4a8c-4968-9814-64b2ced9c8d0</td><td>Notifications & Messaging</td><td>UAT</td><td>Authentication Failure</td>
+      <td>NotificationService, SMTP, PushGateway, SMS Provider</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.6</td>
+    </tr>
+    <tr>
+      <td>630ad24e-0414-4c6e-8547-44b50d5a428c</td><td>Promotions & Discounts</td><td>PreProd</td><td>Unknown</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">48</td>
+      <td style="text-align:right">3.6</td>
+    </tr>
+    <tr>
+      <td>2c81184d-b51d-4a72-9d9b-80a855c984d9</td><td>Analytics & Reporting</td><td>Staging</td><td>Authentication Failure</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">59</td>
+      <td style="text-align:right">3.42</td>
+    </tr>
+    <tr>
+      <td>1b054960-92a6-4c67-abea-3b9792e4d000</td><td>Customer Support & Returns</td><td>Staging</td><td>Integration Timeout</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">3.42</td>
+    </tr>
+    <tr>
+      <td>6d740d05-436b-4c8d-979e-034d447e8b9e</td><td>Promotions & Discounts</td><td>Staging</td><td>Authentication Failure</td>
+      <td>PromoService, Cache (Redis), DB (Rules), Client App</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">3.42</td>
+    </tr>
+    <tr>
+      <td>7779fcf8-056a-42c8-8dc5-5d34438779b4</td><td>Promotions & Discounts</td><td>Staging</td><td>Data Integrity Issue</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">46</td>
+      <td style="text-align:right">3.42</td>
+    </tr>
+    <tr>
+      <td>3334e409-9f17-4dd9-94b8-8feb2826309e</td><td>Analytics & Reporting</td><td>UAT</td><td>Backend Service Bug</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">57</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>02bc0660-fa15-4fb9-b150-a3a5a237d584</td><td>Customer Support & Returns</td><td>UAT</td><td>Configuration Error</td>
+      <td>RMAService, Attachment S3, Email Service, DB (Tickets)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>f7fb97ae-3ad9-4ca4-99e8-e6215d903395</td><td>Customer Support & Returns</td><td>UAT</td><td>Configuration Error</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>19efdc1e-e010-4f09-a189-9770861a2804</td><td>Inventory & Stock Control</td><td>UAT</td><td>External Dependency Failure</td>
+      <td>OrderService, InventoryService, Reservation Subsystem</td>
+      <td style="text-align:right">34</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>3057e32c-3f9b-446e-9ea2-ee7dde7b3051</td><td>Inventory & Stock Control</td><td>UAT</td><td>Backend Service Bug</td>
+      <td>OrderService, InventoryService, Reservation Subsystem</td>
+      <td style="text-align:right">34</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>b4debc20-5556-4802-9acd-97e065862094</td><td>Inventory & Stock Control</td><td>UAT</td><td>Backend Service Bug</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>1ad2ac93-9534-4279-81c0-0bb8d50efb29</td><td>Notifications & Messaging</td><td>UAT</td><td>Backend Service Bug</td>
+      <td>NotificationService, SMTP, PushGateway, SMS Provider</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>975edd64-044d-49f2-9813-996ca60fb58b</td><td>Promotions & Discounts</td><td>UAT</td><td>External Dependency Failure</td>
+      <td>PromoService, Cache (Redis), DB (Rules), Client App</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">3.3</td>
+    </tr>
+    <tr>
+      <td>fa4fb469-7b39-4698-9bc6-6ac8f69781ae</td><td>Customer Support & Returns</td><td>QA</td><td>Data Integrity Issue</td>
+      <td>RMAService, Attachment S3, Email Service, DB (Tickets)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">42</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>38d61dff-a446-489b-9b04-79aab2f8923b</td><td>Inventory & Stock Control</td><td>QA</td><td>Data Integrity Issue</td>
+      <td>OrderService, InventoryService, Reservation Subsystem</td>
+      <td style="text-align:right">34</td>
+      <td style="text-align:right">37</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>04edb97c-4dff-49c2-a43d-d923520c452a</td><td>Notifications & Messaging</td><td>QA</td><td>Integration Timeout</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>0b03ad21-69bc-4fd5-8ed9-7a7cf1c9feb9</td><td>Notifications & Messaging</td><td>QA</td><td>Integration Timeout</td>
+      <td>NotificationService, SMTP, PushGateway, SMS Provider</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">39</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>482869d6-5aa3-4a68-b5bd-2b74a1becc18</td><td>Notifications & Messaging</td><td>QA</td><td>Authentication Failure</td>
+      <td>Template Engine, NotificationService, DB (Templates)</td>
+      <td style="text-align:right">30</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>f346b6ac-019c-47d1-b884-50c4dd49589b</td><td>Promotions & Discounts</td><td>QA</td><td>Integration Timeout</td>
+      <td>CheckoutService, PromoService, Clock, DB (MySQL)</td>
+      <td style="text-align:right">40</td>
+      <td style="text-align:right">44</td>
+      <td style="text-align:right">3.24</td>
+    </tr>
+    <tr>
+      <td>337fcf25-e4a8-4b52-bb61-6528de6ed56a</td><td>Customer Support & Returns</td><td>Staging</td><td>External Dependency Failure</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.135</td>
+    </tr>
+    <tr>
+      <td>b3b80586-7c6e-4830-8f1d-217e36f0af31</td><td>Customer Support & Returns</td><td>Staging</td><td>Configuration Error</td>
+      <td>Client App, ChatProvider, SupportService, Webhook</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.135</td>
+    </tr>
+    <tr>
+      <td>46c2ab0e-0fcd-4756-96b9-006fe0572504</td><td>Inventory & Stock Control</td><td>Staging</td><td>External Dependency Failure</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">3.135</td>
+    </tr>
+    <tr>
+      <td>7d099564-a3de-4c79-88bc-bab71d4a4cd4</td><td>Inventory & Stock Control</td><td>Staging</td><td>Backend Service Bug</td>
+      <td>OrderService, InventoryService, Reservation Subsystem</td>
+      <td style="text-align:right">34</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">3.135</td>
+    </tr>
+    <tr>
+      <td>0daed823-bf45-4a2e-b450-f6ffe871b4f5</td><td>Analytics & Reporting</td><td>UAT</td><td>Unknown</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">3</td>
+    </tr>
+    <tr>
+      <td>244f7c16-384c-4e5e-8f08-15b327630cc7</td><td>Analytics & Reporting</td><td>QA</td><td>Configuration Error</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>7bb7070a-6710-4e1e-a7ab-12e3d0063d88</td><td>Analytics & Reporting</td><td>QA</td><td>Configuration Error</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>87849d00-241e-4390-8922-7f75006d044a</td><td>Analytics & Reporting</td><td>QA</td><td>External Dependency Failure</td>
+      <td>Tracking SDK, Event Ingest, ETL Pipeline, Warehouse (BigQuery)</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">51</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>d30f3f58-eabf-4e0e-9cc6-9e3500365c51</td><td>Analytics & Reporting</td><td>QA</td><td>Configuration Error</td>
+      <td>ReportService, Cache (Redis), Warehouse (Snowflake)</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>3a0a9576-ddaa-4692-9e9f-7f3423f5dec7</td><td>Notifications & Messaging</td><td>QA</td><td>Configuration Error</td>
+      <td>NotificationService, SMTP, PushGateway, SMS Provider</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>fddbdc8b-a107-4e9e-aa93-73de81644def</td><td>Promotions & Discounts</td><td>QA</td><td>Configuration Error</td>
+      <td>PromoService, Cache (Redis), DB (Rules), Client App</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">2.97</td>
+    </tr>
+    <tr>
+      <td>40d3863a-332f-423a-a15d-ff8418c525c0</td><td>Customer Support & Returns</td><td>Staging</td><td>Unknown</td>
+      <td>RMAService, Attachment S3, Email Service, DB (Tickets)</td>
+      <td style="text-align:right">38</td>
+      <td style="text-align:right">37</td>
+      <td style="text-align:right">2.85</td>
+    </tr>
+    <tr>
+      <td>db3246c6-45bb-4e6b-83f4-7defdcbe017f</td><td>Inventory & Stock Control</td><td>QA</td><td>Unknown</td>
+      <td>InventoryService, DB (Postgres), Cache (Redis), Queue (Kafka)</td>
+      <td style="text-align:right">36</td>
+      <td style="text-align:right">33</td>
+      <td style="text-align:right">2.7</td>
+    </tr></tbody></table>
+<script>
+const t=document.getElementById('plan');
+t.querySelectorAll('th').forEach((th,i)=>{
+ th.onclick=()=>{
+  const rows=[...t.tBodies[0].rows];
+  const asc=!th.classList.toggle('asc');
+  rows.sort((a,b)=>{
+   const A=a.cells[i].innerText,B=b.cells[i].innerText;
+   return !isNaN(A-B)?(asc?A-B:B-A):asc?A.localeCompare(B):B.localeCompare(A);
+  });
+  rows.forEach(r=>t.tBodies[0].append(r));
+ };
+});
+</script>
+</body></html>

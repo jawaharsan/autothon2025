@@ -1,0 +1,96 @@
+meta:
+  name: blast_radius_budget_policy_simple
+  version: "1.1"
+  note: Only module, environment, failure_type, impacted_layers are used. No timestamps/logs.
+
+caps:
+  per_incident_minutes_max: 60
+
+multipliers:
+  by_environment:
+    QA: 0.9
+    UAT: 1.0
+    Staging: 0.95
+    PreProd: 1.2
+  by_failure_type:
+    Authentication Failure: 1.2
+    Backend Service Bug: 1.1
+    Concurrency Bug: 1.3
+    Configuration Error: 1.1
+    Data Freshness Breach: 1.4
+    Data Integrity Issue: 1.2
+    External Dependency Failure: 1.1
+    Integration Timeout: 1.2
+    Unknown: 1.0
+
+module_priority_score:
+  Order Management: 5
+  Payment Gateway: 5
+  Product Catalog: 4
+  User Accounts & Auth: 4
+  Shipping & Logistics: 4
+  Notifications & Messaging: 3
+  Promotions & Discounts: 3
+  Analytics & Reporting: 3
+  Customer Support & Returns: 3
+  Inventory & Stock Control: 3
+
+minutes_per_impacted_layer:
+  "API Gateway": 10
+  "Attachment S3": 8
+  "AuthService": 12
+  "Cache (Redis)": 6
+  "Carrier API": 12
+  "CartService": 10
+  "Catalog Service": 12
+  "ChatProvider": 8
+  "CheckoutService": 12
+  "Client App": 8
+  "Clock": 6
+  "DB (MySQL)": 10
+  "DB (Postgres)": 10
+  "DB (Rules)": 10
+  "DB (Templates)": 10
+  "DB (Tickets)": 10
+  "DB (UserStore)": 10
+  "ETL Pipeline": 12
+  "Email Service": 8
+  "Event Ingest": 12
+  "Feature Flags": 6
+  "Geo Service": 12
+  "InventoryService": 12
+  "Label Service": 10
+  "NotificationService": 12
+  "OAuth Provider": 12
+  "OrderService": 12
+  "PaymentService": 12
+  "PromoService": 12
+  "PushGateway": 8
+  "Queue (Kafka)": 8
+  "Queue (SQS)": 8
+  "RMAService": 12
+  "RateLimiter": 6
+  "ReportService": 12
+  "Reservation Subsystem": 10
+  "SMS Provider": 8
+  "SMTP": 8
+  "Search Index (Elasticsearch)": 12
+  "ShippingService": 12
+  "SupportService": 10
+  "Template Engine": 8
+  "Tracking SDK": 12
+  "Warehouse (BigQuery)": 15
+  "Warehouse (Snowflake)": 15
+  "Webhook": 10
+  "Webhook Handler": 10
+
+compute:
+  final_minutes_formula: >
+    min(caps.per_incident_minutes_max,
+        sum(minutes_per_impacted_layer[layer] for layer in impacted_layers)
+        * multipliers.by_environment[environment]
+        * multipliers.by_failure_type[failure_type])
+  priority_score_formula: >
+    module_priority_score[module]
+    * multipliers.by_environment[environment]
+    * multipliers.by_failure_type[failure_type]

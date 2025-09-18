@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0162)file:///Users/ramit/Library/CloudStorage/GoogleDrive-ramitmkaul@gmail.com/My%20Drive/TestAutothon2025/For%20Participants/ecommerce_failure_samples_schema_doc.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcommerceFailureSample – Documentation</title>
+<style>
+  :root { --fg:#1f2937; --bg:#ffffff; --muted:#6b7280; --accent:#2563eb; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; color:var(--fg); background:var(--bg); margin:0; padding:2rem; }
+  h1, h2, h3 { margin: 0 0 0.5rem 0; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.2rem; color: var(--accent); margin-top: 2rem; }
+  p { color:var(--fg); line-height:1.6; }
+  .muted { color: var(--muted); }
+  table { width:100%; border-collapse: collapse; margin-top:1rem; }
+  th, td { border:1px solid #e5e7eb; padding:0.65rem; vertical-align: top; }
+  th { background:#f9fafb; text-align:left; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+  pre { background:#f9fafb; padding:1rem; border:1px solid #e5e7eb; overflow:auto; border-radius:6px; }
+  .pill { display:inline-block; padding:0.2rem 0.5rem; border:1px solid #e5e7eb; border-radius:999px; margin:0.15rem; background:#f3f4f6; }
+  footer { margin-top:2rem; font-size:0.9rem; color:var(--muted); }
+</style>
+</head>
+<body>
+  <h1>EcommerceFailureSample – JSON Schema Documentation</h1>
+  <p class="muted">Generated on 2025-08-29T07:25:01Z</p>
+
+  <h2>Overview</h2>
+  <p>
+    This document describes the structure of the <strong>EcommerceFailureSample</strong> objects used in the
+    e-commerce failure samples dataset. Each record represents a single failed test execution and includes
+    metadata, categorization, impacted layers, and raw logs.
+  </p>
+  <ul>
+    <li><strong>Status:</strong> always <code>FAIL</code></li>
+    <li><strong>Allowed failure types (8):</strong> <span class="pill">Backend Service Bug</span> <span class="pill">Data Integrity Issue</span> <span class="pill">Integration Timeout</span> <span class="pill">Authentication Failure</span> <span class="pill">Concurrency Bug</span> <span class="pill">Configuration Error</span> <span class="pill">External Dependency Failure</span> <span class="pill">Data Freshness Breach</span></li>
+    <li><strong>Additional properties:</strong> disallowed</li>
+  </ul>
+
+  <h2>Fields</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Constraints</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><code>test_id</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Unique identifier of the test execution (UUID)</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>module</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>E-commerce app sub-module under test</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>status</code></td>
+        <td>string (enum)</td>
+        <td>Yes</td>
+        <td>Execution status (always FAIL in dataset)</td>
+        <td>Allowed: FAIL</td>
+      </tr>
+    
+      <tr>
+        <td><code>timestamp</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>ISO 8601 timestamp of failure</td>
+        <td>Format: date-time</td>
+      </tr>
+    
+      <tr>
+        <td><code>error_message</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Human-readable description of the failure event</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>environment</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Execution environment </td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>expected_behavior</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Expected outcome of the test</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>actual_behavior</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Observed outcome</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>failure_type</code></td>
+        <td>string (enum)</td>
+        <td>Yes</td>
+        <td>Categorization of failure </td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>impacted_layers</code></td>
+        <td>array</td>
+        <td>Yes</td>
+        <td>Application layers involved in the failure</td>
+        <td>Items type: string</td>
+      </tr>
+    
+      <tr>
+        <td><code>correlation_id</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Correlation identifier to tie logs across systems</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>failure_categorization_reasoning</code></td>
+        <td>string</td>
+        <td>Yes</td>
+        <td>Textual reasoning why failure is mapped to failure_type</td>
+        <td></td>
+      </tr>
+    
+      <tr>
+        <td><code>logs</code></td>
+        <td>array</td>
+        <td>Yes</td>
+        <td>Chronological log lines captured during test</td>
+        <td>Items type: string</td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+  <h2>Example</h2>
+  <p>Below is an example object conforming to this schema (values illustrative):</p>
+  <pre><code>{
+  "test_id": {},
+  "module": {},
+  "status": {},
+  "timestamp": {},
+  "error_message": {},
+  "environment": {},
+  "expected_behavior": {},
+  "actual_behavior": {},
+  "failure_type": {},
+  "impacted_layers": {},
+  "correlation_id": {},
+  "failure_categorization_reasoning": {},
+  "logs": {}
+}</code></pre>
+
+  <footer>
+    <p>Schema file: <code>ecommerce_failure_samples_schema.json</code></p>
+  </footer>
+
+
+</body></html>

@@ -1,0 +1,1629 @@
+[
+  {
+    "test_id": "4edee06f-42bf-4fc5-a4f0-af4d7f51b388",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 51,
+    "priority_score": 8.4
+  },
+  {
+    "test_id": "bec39de6-6f18-4e43-9ee6-c34e91903e06",
+    "module": "Order Management",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "CartService",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 60,
+    "priority_score": 7.8
+  },
+  {
+    "test_id": "05f6d0da-04b1-43c3-b254-1382fbc3a218",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "PaymentService",
+      "Webhook Handler",
+      "Queue (SQS)",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 60,
+    "priority_score": 7.8
+  },
+  {
+    "test_id": "a4613e5a-01ea-49e9-ba07-b1cd7e7a64dc",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 47,
+    "priority_score": 7.8
+  },
+  {
+    "test_id": "4a751f37-7eef-4a36-9865-3b70fed1676c",
+    "module": "Order Management",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 60,
+    "priority_score": 7.2
+  },
+  {
+    "test_id": "42fcea7f-c0cc-4496-8333-70e46775357b",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 44,
+    "priority_score": 7.2
+  },
+  {
+    "test_id": "cb489685-3ce9-4a0c-ad4d-f7f3479fbb5b",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 44,
+    "priority_score": 7.2
+  },
+  {
+    "test_id": "6061b16e-36fa-4ff6-bb3e-dd9356a89bc9",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 40,
+    "priority_score": 6.6
+  },
+  {
+    "test_id": "7927cb45-cfaa-4295-aced-9619c356d048",
+    "module": "Product Catalog",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 60,
+    "priority_score": 6.24
+  },
+  {
+    "test_id": "1dfff9fb-3cf8-45d3-a168-08662619b5d6",
+    "module": "Shipping & Logistics",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 60,
+    "priority_score": 6.24
+  },
+  {
+    "test_id": "412d27c6-4e9d-4d49-a197-8898b8f076b1",
+    "module": "Payment Gateway",
+    "environment": "Staging",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 38,
+    "priority_score": 6.175
+  },
+  {
+    "test_id": "ea254172-783d-4ac6-ade4-06442c194878",
+    "module": "Payment Gateway",
+    "environment": "PreProd",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "PaymentService",
+      "Webhook Handler",
+      "Queue (SQS)",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 48,
+    "priority_score": 6
+  },
+  {
+    "test_id": "4eac02d4-e4de-473e-9c0c-cd9f0f3520e1",
+    "module": "Payment Gateway",
+    "environment": "QA",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "PaymentService",
+      "Webhook Handler",
+      "Queue (SQS)",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 47,
+    "priority_score": 5.85
+  },
+  {
+    "test_id": "a7d2bccf-9a22-4e10-b0e8-81286be75598",
+    "module": "Product Catalog",
+    "environment": "PreProd",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 55,
+    "priority_score": 5.76
+  },
+  {
+    "test_id": "b8216bb6-cd12-4f1e-a1bf-86494f5adce8",
+    "module": "Product Catalog",
+    "environment": "PreProd",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 55,
+    "priority_score": 5.76
+  },
+  {
+    "test_id": "32471f99-d534-4fb5-8edf-53cda3297bb1",
+    "module": "Shipping & Logistics",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 60,
+    "priority_score": 5.76
+  },
+  {
+    "test_id": "588dc79f-ee70-40d8-9b72-42e1893e90c0",
+    "module": "Shipping & Logistics",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 60,
+    "priority_score": 5.76
+  },
+  {
+    "test_id": "3e042522-2719-4d60-98e8-8190f2dde8a0",
+    "module": "Order Management",
+    "environment": "Staging",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 48,
+    "priority_score": 5.7
+  },
+  {
+    "test_id": "302a0a6e-84e6-481b-8f95-45dfd86bfc63",
+    "module": "Shipping & Logistics",
+    "environment": "UAT",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 60,
+    "priority_score": 5.6
+  },
+  {
+    "test_id": "0b249e4e-2024-4587-b331-a3ddaf82dfe1",
+    "module": "Order Management",
+    "environment": "UAT",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "CartService",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 44,
+    "priority_score": 5.5
+  },
+  {
+    "test_id": "af9e2a13-e9f2-4901-a6a7-e4b38fa0f829",
+    "module": "Order Management",
+    "environment": "UAT",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 47,
+    "priority_score": 5.5
+  },
+  {
+    "test_id": "d115788c-9dba-4b53-8dc1-499c9c875bcc",
+    "module": "Order Management",
+    "environment": "UAT",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 47,
+    "priority_score": 5.5
+  },
+  {
+    "test_id": "8f1c84fd-a889-4dab-8b1b-22c369a52b0f",
+    "module": "Payment Gateway",
+    "environment": "UAT",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "PaymentService",
+      "Webhook Handler",
+      "Queue (SQS)",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 44,
+    "priority_score": 5.5
+  },
+  {
+    "test_id": "28907004-c2f7-40ce-ba4b-ac24b4d52340",
+    "module": "Order Management",
+    "environment": "QA",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "CartService",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 44,
+    "priority_score": 5.4
+  },
+  {
+    "test_id": "3f14e542-ad08-41ef-8abc-50c7cc5f6680",
+    "module": "Order Management",
+    "environment": "QA",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 46,
+    "priority_score": 5.4
+  },
+  {
+    "test_id": "17f9dae6-308c-4403-8417-e35441b110cf",
+    "module": "User Accounts & Auth",
+    "environment": "Staging",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 51,
+    "priority_score": 5.32
+  },
+  {
+    "test_id": "0b4e410a-e9a4-4f8e-9a2a-3683c7cd7c5a",
+    "module": "Product Catalog",
+    "environment": "PreProd",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "Catalog Service",
+      "Search Index (Elasticsearch)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 56,
+    "priority_score": 5.28
+  },
+  {
+    "test_id": "dcfb2b2d-6a98-4d3e-9b11-f0efe3d56d15",
+    "module": "User Accounts & Auth",
+    "environment": "PreProd",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 51,
+    "priority_score": 5.28
+  },
+  {
+    "test_id": "33aaba78-240d-401c-ba65-92a82dbab21f",
+    "module": "Order Management",
+    "environment": "Staging",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "CartService",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 42,
+    "priority_score": 5.225
+  },
+  {
+    "test_id": "5c06896e-2967-4667-92b4-a08b2e84bc2f",
+    "module": "Customer Support & Returns",
+    "environment": "PreProd",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "RMAService",
+      "Attachment S3",
+      "Email Service",
+      "DB (Tickets)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 60,
+    "priority_score": 5.04
+  },
+  {
+    "test_id": "34dfcd2a-c6e8-4993-8389-2ba6909d4d69",
+    "module": "Order Management",
+    "environment": "QA",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "CartService",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 40,
+    "priority_score": 4.95
+  },
+  {
+    "test_id": "ffbf2273-a08d-4ef6-a2e1-b00a6cb3aace",
+    "module": "Payment Gateway",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "PaymentService",
+      "External Provider"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 30,
+    "priority_score": 4.95
+  },
+  {
+    "test_id": "a999e296-45aa-4149-b742-609719f68bc7",
+    "module": "Product Catalog",
+    "environment": "Staging",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "Catalog Service",
+      "Search Index (Elasticsearch)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 52,
+    "priority_score": 4.94
+  },
+  {
+    "test_id": "7be054d7-8c2f-425f-aa67-e161c73ac49c",
+    "module": "Product Catalog",
+    "environment": "UAT",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 46,
+    "priority_score": 4.8
+  },
+  {
+    "test_id": "dc5904db-e8e0-4a55-8f37-802212962a53",
+    "module": "Shipping & Logistics",
+    "environment": "UAT",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "ShippingService",
+      "Carrier API",
+      "Label Service",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 53,
+    "priority_score": 4.8
+  },
+  {
+    "test_id": "df9ddcac-6384-41fa-be73-f0eddd5f0347",
+    "module": "User Accounts & Auth",
+    "environment": "UAT",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Client App",
+      "AuthService",
+      "OAuth Provider",
+      "Cache (Redis)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 46,
+    "priority_score": 4.8
+  },
+  {
+    "test_id": "661cc990-13ab-4e6b-9745-879fb8c305bc",
+    "module": "Order Management",
+    "environment": "Staging",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "API Gateway",
+      "Orchestrator",
+      "PaymentService",
+      "InventoryService",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 40,
+    "priority_score": 4.75
+  },
+  {
+    "test_id": "ad0cd724-b170-4058-953c-94f05b1de559",
+    "module": "Promotions & Discounts",
+    "environment": "PreProd",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 60,
+    "priority_score": 4.68
+  },
+  {
+    "test_id": "121e7350-90d8-4b01-8962-23f003726c66",
+    "module": "Shipping & Logistics",
+    "environment": "QA",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 52,
+    "priority_score": 4.68
+  },
+  {
+    "test_id": "9e34897d-4865-43d1-bb70-ba858005394c",
+    "module": "User Accounts & Auth",
+    "environment": "QA",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 45,
+    "priority_score": 4.68
+  },
+  {
+    "test_id": "06142f66-a01e-4d13-9f18-f7aed7fbd85b",
+    "module": "Product Catalog",
+    "environment": "Staging",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "Catalog Service",
+      "Search Index (Elasticsearch)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 48,
+    "priority_score": 4.56
+  },
+  {
+    "test_id": "34724434-fbb9-4a3b-a447-136d2a0b86d2",
+    "module": "Shipping & Logistics",
+    "environment": "Staging",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "ShippingService",
+      "Carrier API",
+      "Label Service",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 51,
+    "priority_score": 4.56
+  },
+  {
+    "test_id": "99c36c18-c1cf-4f0d-885a-aee9e5ed27e8",
+    "module": "Shipping & Logistics",
+    "environment": "Staging",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "ShippingService",
+      "Carrier API",
+      "Label Service",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 51,
+    "priority_score": 4.56
+  },
+  {
+    "test_id": "e3e1cf9d-539f-4c57-bb4d-977ce5027952",
+    "module": "User Accounts & Auth",
+    "environment": "Staging",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "Client App",
+      "AuthService",
+      "OAuth Provider",
+      "Cache (Redis)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 44,
+    "priority_score": 4.56
+  },
+  {
+    "test_id": "f547e2d6-9815-4a21-903f-b46a5be8138c",
+    "module": "Shipping & Logistics",
+    "environment": "UAT",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 49,
+    "priority_score": 4.4
+  },
+  {
+    "test_id": "1b99a377-0bed-49e0-a44b-ba4a229d6eb8",
+    "module": "User Accounts & Auth",
+    "environment": "UAT",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 42,
+    "priority_score": 4.4
+  },
+  {
+    "test_id": "e8e4a8f3-e439-4109-836b-791c147bb684",
+    "module": "Analytics & Reporting",
+    "environment": "PreProd",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 60,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "dc988e32-49d1-4165-8fdd-a62fe3ed7b37",
+    "module": "Inventory & Stock Control",
+    "environment": "PreProd",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 52,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "fc2f1d32-9e3d-4fdb-8288-ecc3790b8d9e",
+    "module": "Inventory & Stock Control",
+    "environment": "PreProd",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 52,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "24af157e-b731-4329-b649-4866cf04a676",
+    "module": "Notifications & Messaging",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 44,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "45da8d2c-c0be-4067-a884-e22603f9b2d3",
+    "module": "Notifications & Messaging",
+    "environment": "PreProd",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 44,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "31344ec7-a7bc-417a-b621-75d7c6116f6d",
+    "module": "Promotions & Discounts",
+    "environment": "PreProd",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "PromoService",
+      "Cache (Redis)",
+      "DB (Rules)",
+      "Client App"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 52,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "4d6e8f20-a1b8-4cb1-b690-54dbc2ef7c8b",
+    "module": "Shipping & Logistics",
+    "environment": "QA",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "ShippingService",
+      "Carrier API",
+      "Label Service",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 48,
+    "priority_score": 4.32
+  },
+  {
+    "test_id": "3e333ef3-49ac-4c3f-96de-08df86fd6619",
+    "module": "Customer Support & Returns",
+    "environment": "UAT",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 51,
+    "priority_score": 4.2
+  },
+  {
+    "test_id": "c9c99f1b-25e7-49e3-b9d8-748494329dbd",
+    "module": "Promotions & Discounts",
+    "environment": "UAT",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 56,
+    "priority_score": 4.2
+  },
+  {
+    "test_id": "4d361381-f235-40ef-a296-63c736cf41e9",
+    "module": "Product Catalog",
+    "environment": "Staging",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "API Gateway",
+      "Catalog Service",
+      "Search Index (Elasticsearch)"
+    ],
+    "base_minutes": 42,
+    "final_minutes": 44,
+    "priority_score": 4.18
+  },
+  {
+    "test_id": "7b42551f-4dc9-4db9-bc9e-0c991182a736",
+    "module": "User Accounts & Auth",
+    "environment": "Staging",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "AuthService",
+      "OAuth Provider",
+      "Cache (Redis)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 40,
+    "priority_score": 4.18
+  },
+  {
+    "test_id": "008ddfdd-61f1-4dd6-8c5a-ef69dcb385ec",
+    "module": "User Accounts & Auth",
+    "environment": "UAT",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "Client App",
+      "AuthService",
+      "OAuth Provider",
+      "Cache (Redis)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 4
+  },
+  {
+    "test_id": "29157a47-b853-46f6-9e44-3a715554dfbe",
+    "module": "Analytics & Reporting",
+    "environment": "PreProd",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "ReportService",
+      "Cache (Redis)",
+      "Warehouse (Snowflake)"
+    ],
+    "base_minutes": 33,
+    "final_minutes": 44,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "47e593fe-a5e8-471d-b680-8b7bada50329",
+    "module": "Analytics & Reporting",
+    "environment": "PreProd",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "ReportService",
+      "Cache (Redis)",
+      "Warehouse (Snowflake)"
+    ],
+    "base_minutes": 33,
+    "final_minutes": 44,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "006a8678-9a5b-4bc9-912b-8655878e0459",
+    "module": "Inventory & Stock Control",
+    "environment": "PreProd",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "OrderService",
+      "InventoryService",
+      "Reservation Subsystem"
+    ],
+    "base_minutes": 34,
+    "final_minutes": 45,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "ae1e966d-977a-463f-960b-0eafaa0c985f",
+    "module": "Product Catalog",
+    "environment": "QA",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "e50f53da-4871-44a3-aeb3-d6063cd91245",
+    "module": "Product Catalog",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "10d10644-2ed3-4d68-8bec-38cd31f00c69",
+    "module": "User Accounts & Auth",
+    "environment": "QA",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "17dcf2b9-e69a-403f-8118-2bab8d860c05",
+    "module": "User Accounts & Auth",
+    "environment": "QA",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Client App",
+      "AuthService",
+      "OAuth Provider",
+      "Cache (Redis)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "faa64072-7a01-444f-a8ee-d50733c94d8d",
+    "module": "User Accounts & Auth",
+    "environment": "QA",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "API Gateway",
+      "AuthService",
+      "RateLimiter",
+      "DB (UserStore)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 38,
+    "priority_score": 3.96
+  },
+  {
+    "test_id": "285304a3-fdd6-40ae-b104-88e25ac42e29",
+    "module": "Promotions & Discounts",
+    "environment": "UAT",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 52,
+    "priority_score": 3.9
+  },
+  {
+    "test_id": "925f4d99-84fa-4a19-8a25-5218a52cdc9d",
+    "module": "Product Catalog",
+    "environment": "Staging",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "API Gateway",
+      "Catalog Service",
+      "Cache (Redis)",
+      "DB (Postgres)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 37,
+    "priority_score": 3.8
+  },
+  {
+    "test_id": "4f2d850c-9667-410f-a9a1-46fc2fd84ce2",
+    "module": "Shipping & Logistics",
+    "environment": "Staging",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "Client App",
+      "OrderService",
+      "ShippingService",
+      "Geo Service"
+    ],
+    "base_minutes": 44,
+    "final_minutes": 42,
+    "priority_score": 3.8
+  },
+  {
+    "test_id": "9555e37e-9087-47f6-9fd4-19303ea83513",
+    "module": "Analytics & Reporting",
+    "environment": "QA",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 60,
+    "priority_score": 3.78
+  },
+  {
+    "test_id": "bee328a1-7c38-4d1c-a3c7-1841c5a1796b",
+    "module": "Customer Support & Returns",
+    "environment": "QA",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 46,
+    "priority_score": 3.78
+  },
+  {
+    "test_id": "a7693bde-19f6-406a-99a6-a97674c6f028",
+    "module": "Promotions & Discounts",
+    "environment": "QA",
+    "failure_type": "Data Freshness Breach",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 51,
+    "priority_score": 3.78
+  },
+  {
+    "test_id": "7979c8d3-b0d6-4218-9b4b-95034d2952bf",
+    "module": "Notifications & Messaging",
+    "environment": "Staging",
+    "failure_type": "Concurrency Bug",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 38,
+    "priority_score": 3.705
+  },
+  {
+    "test_id": "7247ac08-15f4-4cce-bbb6-5dc5240da168",
+    "module": "Customer Support & Returns",
+    "environment": "UAT",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 44,
+    "priority_score": 3.6
+  },
+  {
+    "test_id": "aee9d23a-f977-4e2f-b3fe-8fe0b860e500",
+    "module": "Inventory & Stock Control",
+    "environment": "UAT",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 44,
+    "priority_score": 3.6
+  },
+  {
+    "test_id": "3fbf6d00-f2db-4886-8605-ce9096b89384",
+    "module": "Notifications & Messaging",
+    "environment": "UAT",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 36,
+    "priority_score": 3.6
+  },
+  {
+    "test_id": "dfbadfc3-4a8c-4968-9814-64b2ced9c8d0",
+    "module": "Notifications & Messaging",
+    "environment": "UAT",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "NotificationService",
+      "SMTP",
+      "PushGateway",
+      "SMS Provider"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 44,
+    "priority_score": 3.6
+  },
+  {
+    "test_id": "630ad24e-0414-4c6e-8547-44b50d5a428c",
+    "module": "Promotions & Discounts",
+    "environment": "PreProd",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 48,
+    "priority_score": 3.6
+  },
+  {
+    "test_id": "2c81184d-b51d-4a72-9d9b-80a855c984d9",
+    "module": "Analytics & Reporting",
+    "environment": "Staging",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 59,
+    "priority_score": 3.42
+  },
+  {
+    "test_id": "1b054960-92a6-4c67-abea-3b9792e4d000",
+    "module": "Customer Support & Returns",
+    "environment": "Staging",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 42,
+    "priority_score": 3.42
+  },
+  {
+    "test_id": "6d740d05-436b-4c8d-979e-034d447e8b9e",
+    "module": "Promotions & Discounts",
+    "environment": "Staging",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "PromoService",
+      "Cache (Redis)",
+      "DB (Rules)",
+      "Client App"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 42,
+    "priority_score": 3.42
+  },
+  {
+    "test_id": "7779fcf8-056a-42c8-8dc5-5d34438779b4",
+    "module": "Promotions & Discounts",
+    "environment": "Staging",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 46,
+    "priority_score": 3.42
+  },
+  {
+    "test_id": "3334e409-9f17-4dd9-94b8-8feb2826309e",
+    "module": "Analytics & Reporting",
+    "environment": "UAT",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 57,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "02bc0660-fa15-4fb9-b150-a3a5a237d584",
+    "module": "Customer Support & Returns",
+    "environment": "UAT",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "RMAService",
+      "Attachment S3",
+      "Email Service",
+      "DB (Tickets)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 42,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "f7fb97ae-3ad9-4ca4-99e8-e6215d903395",
+    "module": "Customer Support & Returns",
+    "environment": "UAT",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 40,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "19efdc1e-e010-4f09-a189-9770861a2804",
+    "module": "Inventory & Stock Control",
+    "environment": "UAT",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "OrderService",
+      "InventoryService",
+      "Reservation Subsystem"
+    ],
+    "base_minutes": 34,
+    "final_minutes": 38,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "3057e32c-3f9b-446e-9ea2-ee7dde7b3051",
+    "module": "Inventory & Stock Control",
+    "environment": "UAT",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "OrderService",
+      "InventoryService",
+      "Reservation Subsystem"
+    ],
+    "base_minutes": 34,
+    "final_minutes": 38,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "b4debc20-5556-4802-9acd-97e065862094",
+    "module": "Inventory & Stock Control",
+    "environment": "UAT",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 40,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "1ad2ac93-9534-4279-81c0-0bb8d50efb29",
+    "module": "Notifications & Messaging",
+    "environment": "UAT",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "NotificationService",
+      "SMTP",
+      "PushGateway",
+      "SMS Provider"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 40,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "975edd64-044d-49f2-9813-996ca60fb58b",
+    "module": "Promotions & Discounts",
+    "environment": "UAT",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "PromoService",
+      "Cache (Redis)",
+      "DB (Rules)",
+      "Client App"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 40,
+    "priority_score": 3.3
+  },
+  {
+    "test_id": "fa4fb469-7b39-4698-9bc6-6ac8f69781ae",
+    "module": "Customer Support & Returns",
+    "environment": "QA",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "RMAService",
+      "Attachment S3",
+      "Email Service",
+      "DB (Tickets)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 42,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "38d61dff-a446-489b-9b04-79aab2f8923b",
+    "module": "Inventory & Stock Control",
+    "environment": "QA",
+    "failure_type": "Data Integrity Issue",
+    "impacted_layers": [
+      "OrderService",
+      "InventoryService",
+      "Reservation Subsystem"
+    ],
+    "base_minutes": 34,
+    "final_minutes": 37,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "04edb97c-4dff-49c2-a43d-d923520c452a",
+    "module": "Notifications & Messaging",
+    "environment": "QA",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 33,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "0b03ad21-69bc-4fd5-8ed9-7a7cf1c9feb9",
+    "module": "Notifications & Messaging",
+    "environment": "QA",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "NotificationService",
+      "SMTP",
+      "PushGateway",
+      "SMS Provider"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 39,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "482869d6-5aa3-4a68-b5bd-2b74a1becc18",
+    "module": "Notifications & Messaging",
+    "environment": "QA",
+    "failure_type": "Authentication Failure",
+    "impacted_layers": [
+      "Template Engine",
+      "NotificationService",
+      "DB (Templates)"
+    ],
+    "base_minutes": 30,
+    "final_minutes": 33,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "f346b6ac-019c-47d1-b884-50c4dd49589b",
+    "module": "Promotions & Discounts",
+    "environment": "QA",
+    "failure_type": "Integration Timeout",
+    "impacted_layers": [
+      "CheckoutService",
+      "PromoService",
+      "Clock",
+      "DB (MySQL)"
+    ],
+    "base_minutes": 40,
+    "final_minutes": 44,
+    "priority_score": 3.24
+  },
+  {
+    "test_id": "337fcf25-e4a8-4b52-bb61-6528de6ed56a",
+    "module": "Customer Support & Returns",
+    "environment": "Staging",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 38,
+    "priority_score": 3.135
+  },
+  {
+    "test_id": "b3b80586-7c6e-4830-8f1d-217e36f0af31",
+    "module": "Customer Support & Returns",
+    "environment": "Staging",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Client App",
+      "ChatProvider",
+      "SupportService",
+      "Webhook"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 38,
+    "priority_score": 3.135
+  },
+  {
+    "test_id": "46c2ab0e-0fcd-4756-96b9-006fe0572504",
+    "module": "Inventory & Stock Control",
+    "environment": "Staging",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 38,
+    "priority_score": 3.135
+  },
+  {
+    "test_id": "7d099564-a3de-4c79-88bc-bab71d4a4cd4",
+    "module": "Inventory & Stock Control",
+    "environment": "Staging",
+    "failure_type": "Backend Service Bug",
+    "impacted_layers": [
+      "OrderService",
+      "InventoryService",
+      "Reservation Subsystem"
+    ],
+    "base_minutes": 34,
+    "final_minutes": 36,
+    "priority_score": 3.135
+  },
+  {
+    "test_id": "0daed823-bf45-4a2e-b450-f6ffe871b4f5",
+    "module": "Analytics & Reporting",
+    "environment": "UAT",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 51,
+    "priority_score": 3
+  },
+  {
+    "test_id": "244f7c16-384c-4e5e-8f08-15b327630cc7",
+    "module": "Analytics & Reporting",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 51,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "7bb7070a-6710-4e1e-a7ab-12e3d0063d88",
+    "module": "Analytics & Reporting",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 51,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "87849d00-241e-4390-8922-7f75006d044a",
+    "module": "Analytics & Reporting",
+    "environment": "QA",
+    "failure_type": "External Dependency Failure",
+    "impacted_layers": [
+      "Tracking SDK",
+      "Event Ingest",
+      "ETL Pipeline",
+      "Warehouse (BigQuery)"
+    ],
+    "base_minutes": 51,
+    "final_minutes": 51,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "d30f3f58-eabf-4e0e-9cc6-9e3500365c51",
+    "module": "Analytics & Reporting",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "ReportService",
+      "Cache (Redis)",
+      "Warehouse (Snowflake)"
+    ],
+    "base_minutes": 33,
+    "final_minutes": 33,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "3a0a9576-ddaa-4692-9e9f-7f3423f5dec7",
+    "module": "Notifications & Messaging",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "NotificationService",
+      "SMTP",
+      "PushGateway",
+      "SMS Provider"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 36,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "fddbdc8b-a107-4e9e-aa93-73de81644def",
+    "module": "Promotions & Discounts",
+    "environment": "QA",
+    "failure_type": "Configuration Error",
+    "impacted_layers": [
+      "PromoService",
+      "Cache (Redis)",
+      "DB (Rules)",
+      "Client App"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 36,
+    "priority_score": 2.97
+  },
+  {
+    "test_id": "40d3863a-332f-423a-a15d-ff8418c525c0",
+    "module": "Customer Support & Returns",
+    "environment": "Staging",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "RMAService",
+      "Attachment S3",
+      "Email Service",
+      "DB (Tickets)"
+    ],
+    "base_minutes": 38,
+    "final_minutes": 37,
+    "priority_score": 2.85
+  },
+  {
+    "test_id": "db3246c6-45bb-4e6b-83f4-7defdcbe017f",
+    "module": "Inventory & Stock Control",
+    "environment": "QA",
+    "failure_type": "Unknown",
+    "impacted_layers": [
+      "InventoryService",
+      "DB (Postgres)",
+      "Cache (Redis)",
+      "Queue (Kafka)"
+    ],
+    "base_minutes": 36,
+    "final_minutes": 33,
+    "priority_score": 2.7
+  }
+]
