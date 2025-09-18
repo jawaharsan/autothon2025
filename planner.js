@@ -238,6 +238,40 @@ if (args.dashboard) {
     document.getElementById("envFilter").addEventListener("change", applyFilters);
     document.getElementById("failureFilter").addEventListener("change", applyFilters);
   </script>
+  <script>
+    const getCellValue = (row, index) =>
+      row.children[index].innerText || row.children[index].textContent;
+
+    const comparer = (index, asc) => (a, b) => {
+      const v1 = getCellValue(asc ? a : b, index);
+      const v2 = getCellValue(asc ? b : a, index);
+
+      return !isNaN(parseFloat(v1)) && !isNaN(parseFloat(v2))
+        ? parseFloat(v1) - parseFloat(v2)
+        : v1.toString().localeCompare(v2);
+    };
+
+    const headers = document.querySelectorAll("th");
+
+    headers.forEach((th, i) => {
+      // add initial indicator
+      th.innerHTML += ' <span class="sort-indicator" style="color:#aaa;font-size:0.8em;">⇅</span>';
+
+      th.addEventListener("click", () => {
+        const table = th.closest("table");
+        const tbody = table.querySelector("tbody");
+        const asc = !(th.asc = !th.asc);
+
+        Array.from(tbody.querySelectorAll("tr"))
+          .sort(comparer(i, asc))
+          .forEach(tr => tbody.appendChild(tr));
+
+        // update indicators
+        headers.forEach(h => h.querySelector(".sort-indicator").textContent = "⇅");
+        th.querySelector(".sort-indicator").textContent = asc ? "▲" : "▼";
+      });
+    });
+  </script>
 
   </body>
   </html>`;
